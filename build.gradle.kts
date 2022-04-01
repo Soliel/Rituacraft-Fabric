@@ -7,11 +7,18 @@ base {
     val archivesBaseName: String by project
     archivesName.set(archivesBaseName)
 }
+
 val modVersion: String by project
 version = modVersion
 val mavenGroup: String by project
 group = mavenGroup
-repositories {}
+
+repositories {
+    maven {
+        url = uri("https://storage.googleapis.com/devan-maven/")
+    }
+}
+
 dependencies {
     val minecraftVersion: String by project
     minecraft("com.mojang:minecraft:$minecraftVersion")
@@ -23,6 +30,7 @@ dependencies {
     modImplementation("net.fabricmc.fabric-api:fabric-api:$fabricVersion")
     val fabricKotlinVersion: String by project
     modImplementation("net.fabricmc:fabric-language-kotlin:$fabricKotlinVersion")
+    modImplementation("net.devtech:arrp:0.5.7")
 }
 tasks {
     val javaVersion = JavaVersion.VERSION_17
@@ -47,5 +55,30 @@ tasks {
         sourceCompatibility = javaVersion
         targetCompatibility = javaVersion
         withSourcesJar()
+    }
+}
+
+loom {
+    runs {
+        create("datagenClient") {
+            this.client()
+            this.name("Data Generation")
+            this.vmArgs.add("-Dfabric-api.datagen")
+            this.vmArgs.add("-Dfabric-api.datagen.output-dir=${file("src/generated/resources")}")
+            this.ideConfigGenerated(true)
+            this.runDir("build/datagen")
+            this.source("main")
+        }
+    }
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir("src/main")
+        }
+        resources {
+            srcDir("src/generated/resources")
+        }
     }
 }

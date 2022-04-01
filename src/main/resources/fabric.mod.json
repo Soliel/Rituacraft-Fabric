@@ -21,6 +21,10 @@
         "adapter": "kotlin",
         "value": "com.soliel.rituacraft.Rituacraft"
       }
+
+    ],
+    "rrp:pregen": [
+      "com.soliel.rituacraft.datagen.Pregen"
     ]
   },
   "mixins": [
