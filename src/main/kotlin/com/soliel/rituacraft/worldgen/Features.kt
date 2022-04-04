@@ -19,7 +19,7 @@ object Features {
     val CONFIGURED_MANA_FONT: ConfiguredFeature<*, *> = ConfiguredFeature(MANA_FONT, ManaFontFeatureConfig(ConstantIntProvider.create(32)))
     val PLACED_MANA_FONT: PlacedFeature = PlacedFeature(RegistryEntry.of(CONFIGURED_MANA_FONT),
         listOf(
-           RarityFilterPlacementModifier.of(20)
+           RarityFilterPlacementModifier.of(50)
         )
     )
 
