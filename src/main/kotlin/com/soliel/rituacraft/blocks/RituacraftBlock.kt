@@ -7,6 +7,6 @@ import net.minecraft.block.Block
 import net.minecraft.item.BlockItem
 
 @Suppress("UNUSED")
-class RituacraftBlock(val IDENT: String, val DEFAULT_NAME: String, settings: FabricBlockSettings) :  Block(settings) {
+open class RituacraftBlock(val IDENT: String, val DEFAULT_NAME: String, settings: FabricBlockSettings) :  Block(settings) {
     val item: BlockItem = BlockItem(this, FabricItemSettings().maxCount(64).group(Rituacraft.creativeTab))
 }

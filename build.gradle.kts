@@ -17,6 +17,10 @@ repositories {
     maven {
         url = uri("https://storage.googleapis.com/devan-maven/")
     }
+    maven {
+        name = "Ladysnake Mods"
+        url = uri("https://ladysnake.jfrog.io/artifactory/mods")
+    }
 }
 
 dependencies {
@@ -30,6 +34,8 @@ dependencies {
     modImplementation("net.fabricmc.fabric-api:fabric-api:$fabricVersion")
     val fabricKotlinVersion: String by project
     modImplementation("net.fabricmc:fabric-language-kotlin:$fabricKotlinVersion")
+    modImplementation("dev.onyxstudios.cardinal-components-api:cardinal-components-base:4.1.4")
+    modImplementation("dev.onyxstudios.cardinal-components-api:cardinal-components-chunk:4.1.4")
     modImplementation("net.devtech:arrp:0.5.7")
 }
 tasks {
