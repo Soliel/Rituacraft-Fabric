@@ -21,10 +21,21 @@
         "adapter": "kotlin",
         "value": "com.soliel.rituacraft.Rituacraft"
       }
-
     ],
     "rrp:pregen": [
       "com.soliel.rituacraft.datagen.Pregen"
+    ],
+    "fabric-datagen": [
+      {
+        "adapter": "kotlin",
+        "value": "com.soliel.rituacraft.datagen.RituacraftDatagenEntryPoint"
+      }
+    ],
+    "cardinal-components": [
+      {
+        "adapter": "kotlin",
+        "value": "com.soliel.rituacraft.components.Components"
+      }
     ]
   },
   "mixins": [
@@ -36,5 +47,10 @@
     "fabric-language-kotlin": ">=1.7.1+kotlin.1.6.10",
     "minecraft": "1.18.x",
     "java": ">=17"
+  },
+  "custom": {
+    "cardinal-components": [
+      "rituacraft:manaproducer"
+    ]
   }
 }

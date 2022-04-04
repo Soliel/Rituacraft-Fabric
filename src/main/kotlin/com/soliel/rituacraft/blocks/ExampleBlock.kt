@@ -1,4 +1,3 @@
 package com.soliel.rituacraft.blocks
 
-class ExampleBlock {
-}
+class ExampleBlock

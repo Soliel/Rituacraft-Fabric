@@ -1,5 +1,6 @@
 package com.soliel.rituacraft
-import com.soliel.rituacraft.blocks.Blocks
+import com.soliel.rituacraft.items.Items
+import com.soliel.rituacraft.worldgen.Features
 import net.devtech.arrp.api.RuntimeResourcePack
 import net.fabricmc.api.ModInitializer
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder
@@ -15,11 +16,15 @@ object Rituacraft: ModInitializer {
     private fun creativeItemGroup() : ItemGroup {
         return FabricItemGroupBuilder.build(
             RituacraftIdentifier("general")
-        ) { ItemStack(Blocks.EXAMPLE_BLOCK) }
+        ) { ItemStack(Items.DetectorCrystal) }
     }
 
     override fun onInitialize() {
-        Blocks.registerBlocks()
+        //Blocks.registerBlocks()
+        Items.registerItems()
+
+        //BlockEntities.initializeBlockEntities()
+        Features.initializeFeatures()
         println("Rituacraft initialization complete.")
     }
 }

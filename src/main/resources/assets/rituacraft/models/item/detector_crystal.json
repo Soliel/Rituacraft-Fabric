@@ -1,0 +1,14 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "rituacraft:item/crystal-low"
+  },
+  "overrides" : [
+    {
+      "predicate": {
+        "powered": 1
+      },
+      "model": "rituacraft:item/detector_crystal_powered"
+    }
+  ]
+}
