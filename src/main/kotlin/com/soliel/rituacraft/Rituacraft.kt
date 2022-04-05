@@ -1,6 +1,5 @@
 package com.soliel.rituacraft
 import com.soliel.rituacraft.items.Items
-import com.soliel.rituacraft.worldgen.Features
 import net.devtech.arrp.api.RuntimeResourcePack
 import net.fabricmc.api.ModInitializer
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder
@@ -24,7 +23,6 @@ object Rituacraft: ModInitializer {
         Items.registerItems()
 
         //BlockEntities.initializeBlockEntities()
-        Features.initializeFeatures()
         println("Rituacraft initialization complete.")
     }
 }
